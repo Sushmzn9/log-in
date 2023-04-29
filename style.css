@@ -16,6 +16,8 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+
+
 h1 {
   text-align: center;
 }
@@ -91,3 +93,20 @@ button {
     color: #0077b5;
     text-decoration: none;
   }
+/* profile page */
+
+  .container1{
+    
+      margin: 20px auto;
+     width: 80%;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+    }
+    
+    .profile-picture img {
+      border-radius: 50%;
+    }
+    
