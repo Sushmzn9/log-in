@@ -1,0 +1,418 @@
+/* Reset styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Page layout */
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    padding: 16px;
+    background-color: #f1f1f1;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 16px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 24px;
+  }
+  
+  main {
+    background-color: #fff;
+    padding: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+  }
+  
+  h1, h2 {
+    margin: 0;
+    font-weight: normal;
+  }
+  
+  h1 {
+    font-size: 36px;
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-top: 16px;
+}
+
+form {
+display: flex;
+flex-direction: column;
+gap: 8px;
+margin-bottom: 24px;
+}
+label {
+    font-weight: bold;
+    }
+    
+    input[type="text"],
+    textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    }
+    
+    select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    appearance: none;
+    }
+    
+    button[type="submit"] {
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    background-color: #4CAF50;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    }
+    
+    button[type="submit"]:hover {
+    background-color: #3e8e41;
+    }
+    
+    table {
+    border-collapse: collapse;
+    width: 100%;
+    }
+    
+    th, td {
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    }
+    
+    th {
+    background-color: #f2f2f2;
+    }
+    
+    .actions {
+    display: flex;
+    gap: 8px;
+    }
+    
+    .actions button {
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    }
+    
+    .actions button.edit {
+    background-color: #4CAF50;
+    color: #fff;
+    }
+    
+    .actions button.delete {
+    background-color: #f44336;
+    color: #fff;
+    }
+    
+    .actions button:hover {
+    background-color: #3e8e41;
+    }
+    
+    footer {
+    margin-top: 24px;
+    padding: 8px 16px;
+    background-color: #fff;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    }
+    
+    footer p {
+    margin: 0;
+    font-size: 14px;
+    }
+    
+    /* Responsive styles */
+    @media (min-width: 768px) {
+    main {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 16px;
+    }
+    
+    form {
+    margin-bottom: 0;
+    }
+    
+    table {
+    margin-top: 24px;
+    }
+    }
+    
+    csharp
+    Copy code
+    
+    JavaScript:
+    ```javascript
+    // Firebase configuration
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_AUTH_DOMAIN",
+      projectId: "YOUR_PROJECT_ID",
+      storageBucket: "YOUR_STORAGE_BUCKET",
+      messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+      appId: "YOUR_APP_ID",
+      measurementId: "YOUR_MEASUREMENT_ID"
+    };
+    
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+    
+    // UI elements
+    const authButtons = document.getElementById('auth-buttons');
+    const addJobForm = document.getElementById('add-job-form');
+    const jobTable = document.getElementById('job-table');
+    
+    // Initialize UI
+    let currentUser = null;
+    
+    auth.onAuthStateChanged(user => {
+      if (user) {
+        currentUser = user;
+        authButtons.innerHTML = `
+          <p>Welcome, ${user.email}!</p>
+          <button id="sign-out-button">Sign Out</button>
+        `;
+        const signOutButton = document.getElementById('sign-out-button');
+        signOutButton.addEventListener('click', () => {
+          auth.signOut();
+          currentUser = null;
+        });
+        loadJobs();
+      } else {
+        currentUser
+    
+    
+    
+    
+    User
+    can you regenerate with html, java script and css
+    ChatGPT
+    
+    2 / 2
+    
+    Sure! Here's the HTML code:
+    
+    html
+    Copy code
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Job Tracker</title>
+        <link rel="stylesheet" href="style.css" />
+      </head>
+      <body>
+        <header>
+          <h1>Job Tracker</h1>
+          <div id="auth-buttons"></div>
+        </header>
+        <main>
+          <form id="add-job-form">
+            <h2>Add Job</h2>
+            <label for="job-title">Job Title:</label>
+            <input type="text" id="job-title" required />
+            <label for="job-link">Job Link:</label>
+            <input type="text" id="job-link" required />
+            <label for="job-description">Job Description:</label>
+            <textarea id="job-description" required></textarea>
+            <label for="job-status">Job Status:</label>
+            <select id="job-status">
+              <option value="pending">Pending</option>
+              <option value="accepted">Accepted</option>
+              <option value="rejected">Rejected</option>
+            </select>
+            <button type="submit">Add Job</button>
+          </form>
+          <table id="job-table">
+            <thead>
+              <tr>
+                <th>Job Title</th>
+                <th>Job Link</th>
+                <th>Job Description</th>
+                <th>Job Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </main>
+        <footer>
+          <p>Job Tracker &copy; 2023</p>
+        </footer>
+        <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-firestore.js"></script>
+        <script src="app.js"></script>
+      </body>
+    </html>
+    Here's the CSS code:
+    
+    css
+    Copy code
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+    
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    header h1 {
+      margin: 0;
+    }
+    
+    main {
+      padding: 16px;
+    }
+    
+    h2 {
+      margin-top: 0;
+      font-size: 24px;
+    }
+    
+    label {
+      font-weight: bold;
+    }
+    
+    input[type="text"],
+    textarea {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+      margin-bottom: 16px;
+    }
+    
+    select {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+      margin-bottom: 16px;
+    }
+    
+    button[type="submit"] {
+      padding: 8px;
+      border: none;
+      border-radius: 4px;
+      background-color:#007bff;
+    color: #fff;
+    cursor: pointer;
+    }
+    
+    table {
+    border-collapse: collapse;
+    width: 100%;
+    }
+    
+    th,
+    td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+    }
+    
+    th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    }
+    
+    th:first-child,
+    td:first-child {
+    width: 25%;
+    }
+    
+    th:nth-child(2),
+    td:nth-child(2) {
+    width: 30%;
+    }
+    
+    th:nth-child(3),
+    td:nth-child(3) {
+    width: 30%;
+    }
+    
+    th:last-child,
+    td:last-child {
+    width: 15%;
+    text-align: center;
+    }
+    
+    .actions {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    }
+    
+    .actions button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    }
+    
+    .actions button.edit {
+    background-color: #ffc107;
+    }
+    
+    .actions button.delete {
+    background-color: #dc3545;
+    }
+    
+    footer {
+    background-color: #333;
+    color: #fff;
+    padding: 16px;
+    text-align: center;
+    }
+    
+    footer p {
+    margin: 0;
+    }
+    
+   
+    
+    
+    
+    
+    
+    
+    
+  

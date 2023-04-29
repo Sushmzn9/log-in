@@ -19,3 +19,12 @@ signupLink.addEventListener("click", (e) => {
   e.preventDefault();
   alert("Create new account clicked!");
 });
+
+const jobLinks = document.querySelectorAll("td:first-child a");
+
+jobLinks.forEach(link => {
+  link.addEventListener("click", e => {
+    e.preventDefault();
+    window.open(link.href, "_blank");
+  });
+});
