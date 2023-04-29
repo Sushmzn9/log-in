@@ -1,0 +1,143 @@
+/* General Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f2f2f2;
+  }
+  
+  header {
+    background-color: #005dff;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  button {
+    border: none;
+    background-color: #005dff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  /* Metrics Styles */
+  
+  .metric {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .metric i {
+    font-size: 2rem;
+    color: #005dff;
+  }
+  
+  .metric h2 {
+    font-size: 3rem;
+    margin-top: 20px;
+  }
+  
+  .metric p {
+    font-size: 1.5rem;
+    color: #666;
+    margin-top: 10px;
+  }
+  
+  /* Job Postings Styles */
+  
+  .job-post {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    padding: 20px;
+  }
+  
+  .job-post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .job-post-header h2 {
+    font-size: 2rem;
+  }
+  
+  .job-post-item {
+    border-bottom: 1px solid #eee;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .job-post-item:last-child {
+    border-bottom: none;
+  }
+  
+  .job-post-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+  }
+  
+  .job-post-item p {
+    font-size: 1.2rem;
+    color: #666;
+  }
+  
+  .job-post-item .status {
+    border-radius: 5px;
+    font-size: 1.2rem;
+    padding: 5px 10px;
+    color: #fff;
+    margin-left: 10px;
+  }
+  
+  .job-post-item .status.saved {
+    background-color: #2196f3;
+  }
+  
+  .job-post-item .status.applied {
+    background-color: #4caf50;
+  }
+  
+  .job-post-item .status.rejected {
+    background-color: #f44336;
+  }
+  
+  .job-post-item .job-post-actions {
+    display: flex;
+  }
+  
+  .job-post-item .job-post-actions button {
+    background-color: transparent;
+    border: none;
+    font-size: 1.5rem;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  
+  .job-post-item .job-post-actions button i {
+    color: #ccc;
+  }
+  
+  .job-post-item .job-post-actions button:hover i {
+    color: #005dff;
+  }
+  
