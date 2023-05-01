@@ -1,41 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Login Page</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-    <div class="container">
-      <h1>Login</h1>
-      <form>
-        <input type="email" placeholder="Email" required />
-        <input type="password" placeholder="Password" required />
-        <button type="submit">Sign in</button>
-      </form>
-      <div class="or">OR</div>
-      <div class="oauth">
-        <a href="#" class="google">
-          <img src="./assets/gmail.png" alt="Google" />
-          Sign in with Google
-        </a>
-        <a href="#" class="linkedin">
-          <img src="./assets/linkedin.png" alt="LinkedIn" />
-          Sign in with LinkedIn
-        </a>
-        <a href="#" class="github">
-          <img src="./assets/github.png" alt="GitHub" />
-          Sign in with GitHub
-        </a>
-      </div>
-      <div class="signup">
-        Don't have an account? <a href="#">Sign up</a>
-      </div>
-    </div>
-    <script src="app.js"></script>
-
-</body>
-</html>
+    <title>Job Hunter App</title>
+  </head>
+  <body>
+    <header>
+      <h1>Job Hunter</h1>
+    </header>
+    <main>
+      <section class="dashboard">
+        <h2>Dashboard</h2>
+        <div class="dashboard-grid">
+          <div class="dashboard-item">
+            <h3>Jobs Saved</h3>
+            <p id="job-saved">0</p>
+          </div>
+          <div class="dashboard-item">
+            <h3>Jobs Applied</h3>
+            <p id="job-applied">0</p>
+          </div>
+          <div class="dashboard-item">
+            <h3>Jobs Pending</h3>
+            <p id="job-pending">0</p>
+          </div>
+          <div class="dashboard-item">
+            <h3>Jobs Denied</h3>
+            <p id="job-denied">0</p>
+          </div>
+        </div>
+      </section>
+      <section class="user-profile">
+        <h2>User Profile</h2>
+        <form id="user-profile-form">
+          <div class="form-group">
+            <label for="education">Education</label>
+            <textarea id="education" name="education"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="about">About</label>
+            <textarea id="about" name="about"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="skills">Skills</label>
+            <textarea id="skills" name="skills"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="experience">Experience</label>
+            <textarea id="experience" name="experience"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="contact">Contact</label>
+            <textarea id="contact" name="contact"></textarea>
+          </div>
+          <button type="submit">Save</button>
+        </form>
+      </section>
+      <section class="jobs">
+        <h2>Jobs</h2>
+        <form id="job-form">
+          <div class="form-group">
+            <label for="job-link">Link</label>
+            <input type="text" id="job-link" name="job-link" />
+          </div>
+          <div class="form-group">
+            <label for="job-title">Title</label>
+            <input type="text" id="job-title" name="job-title" />
+          </div>
+          <div class="form-group">
+            <label for="job-description">Description</label>
+            <textarea id="job-description" name="job-description"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="job-status">Status</label>
+            <select id="job-status" name="job-status">
+              <option value="Saved">Saved</option>
+              <option value="Applied">Applied</option>
+              <option value="Pending">Pending</option>
+              <option value="Denied">Denied</option>
+</select>
+</div>
+</form>
+</section>
+</main>
+<script src="./app.js"></script>
+</body></html>
